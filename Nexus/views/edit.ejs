@@ -1,0 +1,17 @@
+<%- include('layout', { title: 'Edit Note' }) %>
+
+<div class="main-content">
+    <div class="header">
+        <button id="menu-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M4 18h16v-2H4v2zm0-5h16v-2H4v2zm0-7v2h16V6H4z"></path>
+            </svg>
+        </button>
+        <input type="text" placeholder="Search">
+    </div>
+    <form action="/home/edit/<%= note._id %>" method="post">
+        <input type="text" name="title" value="<%= note.title %>" placeholder="Title">
+        <textarea name="content" placeholder="Content"><%= note.content %></textarea>
+        <button type="submit">Save Changes</button>
+    </form>
+</div>
